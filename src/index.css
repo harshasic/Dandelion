@@ -1,0 +1,66 @@
+:root {
+  --color-bg-top: #1a1a2e;
+  --color-bg-bottom: #16213e;
+  --color-grid: rgba(255, 255, 255, 0.1);
+  --color-cell-empty: rgba(255, 255, 255, 0.05);
+  --color-cell-filled: #ff3333;
+  --color-dandelion: #fcd34d;
+  --color-text: #ffffff;
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --font-main: 'Inter', system-ui, sans-serif;
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--color-bg-top), var(--color-bg-bottom));
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: var(--color-text);
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.cell-anim {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.dandelion-anim {
+  animation: float 2s ease-in-out infinite;
+}
